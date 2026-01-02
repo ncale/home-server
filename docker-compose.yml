@@ -1,5 +1,11 @@
 services:
-  # Media Server
+  speedtest:
+    image: librespeed/speedtest:latest
+    container_name: speedtest
+    ports:
+      - "8082:80"
+    restart: unless-stopped
+
   jellyfin:
     image: jellyfin/jellyfin:latest
     container_name: jellyfin
@@ -11,7 +17,6 @@ services:
       - /mnt/media:/media # Path to your movies/shows
     restart: unless-stopped
 
-  # Ad-blocking DNS
   pihole:
     container_name: pihole
     image: pihole/pihole:latest
@@ -27,7 +32,6 @@ services:
       - ./pihole/etc-dnsmasq.d:/etc/dnsmasq.d
     restart: unless-stopped
 
-  # Remote Access (Magic VPN)
   tailscale:
     image: tailscale/tailscale:latest
     container_name: tailscale
