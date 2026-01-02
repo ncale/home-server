@@ -1,48 +1,7 @@
 services:
   speedtest:
-    image: librespeed/speedtest:latest
+    image: lscr.io/linuxserver/librespeed:latest
     container_name: speedtest
     ports:
       - "8082:80"
-    restart: unless-stopped
-
-  jellyfin:
-    image: jellyfin/jellyfin:latest
-    container_name: jellyfin
-    user: 1000:1000
-    network_mode: host # Easiest for DLNA and discovery
-    volumes:
-      - ./jellyfin/config:/config
-      - ./jellyfin/cache:/cache
-      - /mnt/media:/media # Path to your movies/shows
-    restart: unless-stopped
-
-  pihole:
-    container_name: pihole
-    image: pihole/pihole:latest
-    ports:
-      - "53:53/tcp"
-      - "53:53/udp"
-      - "80:80/tcp"
-    environment:
-      TZ: 'America/Chicago' # Change to your timezone
-      WEBPASSWORD: 'admin'  # Change this!
-    volumes:
-      - ./pihole/etc-pihole:/etc/pihole
-      - ./pihole/etc-dnsmasq.d:/etc/dnsmasq.d
-    restart: unless-stopped
-
-  tailscale:
-    image: tailscale/tailscale:latest
-    container_name: tailscale
-    hostname: raspberrypi
-    environment:
-      - TS_AUTHKEY=tskey-auth-yourkeyhere # Get this from Tailscale admin console
-      - TS_STATE_DIR=/var/lib/tailscale
-    volumes:
-      - ./tailscale/state:/var/lib/tailscale
-      - /dev/net/tun:/dev/net/tun
-    cap_add:
-      - NET_ADMIN
-      - NET_RAW
     restart: unless-stopped
