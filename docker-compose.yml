@@ -1,0 +1,20 @@
+---
+- name: Deploy Homelab Stack
+  hosts: pi_server
+  become: yes  # Runs as sudo
+  tasks:
+    - name: Ensure the app directory exists on the Pi
+      ansible.builtin.file:
+        path: /opt/stacks/jellyfin
+        state: directory
+        mode: '0755'
+
+    - name: Copy Compose file from Laptop to Pi
+      ansible.builtin.copy:
+        src: ./docker-compose.yml
+        dest: /opt/stacks/jellyfin/docker-compose.yml
+
+    - name: Deploy Docker Stack
+      community.docker.docker_compose_v2:
+        project_src: /opt/stacks/jellyfin
+        state: present
