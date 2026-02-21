@@ -1,4 +1,12 @@
-.venv/
-*.pyc
-__pycache__/
-.env
+# Ignore all secret files
+*.env
+secrets/
+
+# Ignore actual heavy data
+**/data/
+**/downloads/
+**/backups/
+
+# Ignore OS junk
+.DS_Store
+Thumbs.db
