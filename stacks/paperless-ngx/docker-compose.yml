@@ -10,7 +10,7 @@
 # configurations:
 #
 # - Instead of SQLite (default), PostgreSQL is used as the database server.
-# 
+#
 # To see the source of this file, see 
 # https://github.com/paperless-ngx/paperless-ngx/blob/dev/docker/compose/docker-compose.portainer.yml
 services:
@@ -44,8 +44,6 @@ services:
     environment:
       PAPERLESS_REDIS: redis://broker:6379
       PAPERLESS_DBHOST: db
-    env_file:
-      - stack.env
 volumes:
   data:
   media:
