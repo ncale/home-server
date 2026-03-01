@@ -13,5 +13,7 @@ Before home-rolling any of these services, take a look through the [proxmox help
 | Nginx Proxy Manager | 81   |
 | Miniflux            | 9001 |
 | Actual Budget       | 5006 |
+| Directus CMS        | 8055 |
+| Paperless NGX       | 8010 |
 | Calibre Web         | ...  |
 | Speedtest           | ...  |
