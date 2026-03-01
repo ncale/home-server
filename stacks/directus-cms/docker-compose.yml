@@ -1,0 +1,15 @@
+# See https://directus.io/docs/getting-started/create-a-project#docker-compose
+services:
+  directus:
+    image: directus/directus:11.14.1
+    ports:
+      - 8055:8055
+    volumes:
+      - ./database:/directus/database
+      - ./uploads:/directus/uploads
+      - ./extensions:/directus/extensions
+    environment:
+      SECRET: ${SECRET}
+      DB_CLIENT: ${DB_CLIENT}
+      DB_FILENAME: ${DB_FILENAME}
+      WEBSOCKETS_ENABLED: "true"
