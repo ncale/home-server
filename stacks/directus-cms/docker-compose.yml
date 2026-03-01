@@ -6,9 +6,9 @@ services:
     ports:
       - 8055:8055
     volumes:
-      - ~/directus/database:/directus/database
-      - ~/directus/uploads:/directus/uploads
-      - ~/directus/extensions:/directus/extensions
+      - /root/directus/database:/directus/database
+      - /root/directus/uploads:/directus/uploads
+      - /root/directus/extensions:/directus/extensions
     environment:
       SECRET: ${SECRET}
       DB_CLIENT: ${DB_CLIENT}
