@@ -6,29 +6,32 @@ This is a home server config / ops repo. I can optionally add backup and healthc
 
 Before home-rolling any of these services, take a look through the [proxmox helper scripts](https://community-scripts.github.io/ProxmoxVE/). It's more than likely that it has an out-of-the-box method of deployment to a VM or LXC.
 
-## Service <> Port Map
+## Service Table
 
-| Service                    | Port  |
-| -------------------------- | ----- |
-| ?                          | 25    |
-| ?                          | 80    |
-| Nginx Proxy Manager        | 81    |
-| ?                          | 443   |
-| ?                          | 3001  |
-| WorldDB Metabase Dashboard | 3100  |
-| OpenSpeedTest              | 4000  |
-| OpenSpeedTest              | 4001  |
-| Actual Budget              | 5006  |
-| WorldDB Postgres DB        | 5432  |
-| ?                          | 7575  |
-| ?                          | 8000  |
-| Paperless NGX              | 8010  |
-| Directus CMS               | 8055  |
-| ?                          | 8384  |
-| WorldDB Jupyter Notebook   | 8800  |
-| MeTube                     | 8888  |
-| Miniflux                   | 9001  |
-| ?                          | 9443  |
-| ?                          | 22000 |
-| Calibre Web                | ...   |
-| Speedtest                  | ...   |
+| Service                    | ip address | Port  | Websockets Support |
+| -------------------------- | ---------- | ----- | ------------------ |
+| Proxmox (https)            | subnet:150 | 8006  | true               |
+| Jellyfin                   | subnet:151 | 8096  | false              |
+| AdGuard Home               | subnet:155 | 80    | false              |
+| ?                          | subnet:154 | 25    | false              |
+| ?                          | subnet:154 | 80    | false              |
+| Nginx Proxy Manager        | subnet:154 | 81    | false              |
+| ?                          | subnet:154 | 443   | false              |
+| ?                          | subnet:154 | 3001  | false              |
+| WorldDB Metabase Dashboard | subnet:154 | 3100  | false              |
+| OpenSpeedTest              | subnet:154 | 4000  | false              |
+| OpenSpeedTest              | subnet:154 | 4001  | false              |
+| Actual Budget              | subnet:154 | 5006  | false              |
+| WorldDB Postgres DB        | subnet:154 | 5432  | false              |
+| ?                          | subnet:154 | 7575  | false              |
+| ?                          | subnet:154 | 8000  | false              |
+| Paperless NGX              | subnet:154 | 8010  | true               |
+| Directus CMS               | subnet:154 | 8055  | false              |
+| ?                          | subnet:154 | 8384  | false              |
+| WorldDB Jupyter Notebook   | subnet:154 | 8800  | true               |
+| MeTube                     | subnet:154 | 8888  | false              |
+| Miniflux                   | subnet:154 | 9001  | false              |
+| Portainer (https)          | subnet:154 | 9443  | false              |
+| ?                          | subnet:154 | 22000 | false              |
+| Calibre Web                | subnet:154 | ...   | false              |
+| Speedtest                  | subnet:154 | ...   | false              |
