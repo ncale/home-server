@@ -20,11 +20,18 @@ services:
   jupyter:
     image: jupyter/scipy-notebook:latest
     restart: unless-stopped
+    user: root
     environment:
-      - JUPYTER_ENABLE_LAB=yes          # use JupyterLab UI instead of classic
+      - JUPYTER_ENABLE_LAB=yes # use JupyterLab UI instead of classic
       - JUPYTER_TOKEN=${JUPYTER_TOKEN}
+      - CHOWN_HOME=yes
+      - CHOWN_EXTRA=/home/jovyan/work
+      - CHOWN_HOME_OPTS=-R
+      - GRANT_SUDO=yes
+      - NB_UID=1000
+      - NB_GID=1000
     volumes:
-      - ./:/home/jovyan/work            # mounts your whole project folder
+      - /opt/worlddb:/home/jovyan/work
     ports:
       - "8800:8888"
     depends_on:
