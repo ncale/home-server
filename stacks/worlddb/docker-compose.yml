@@ -1,0 +1,51 @@
+services:
+
+  postgres:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${DB_USER} -d $${DB_NAME}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  jupyter:
+    image: jupyter/scipy-notebook:latest
+    restart: unless-stopped
+    environment:
+      - JUPYTER_ENABLE_LAB=yes          # use JupyterLab UI instead of classic
+      - JUPYTER_TOKEN=${JUPYTER_TOKEN}
+    volumes:
+      - ./:/home/jovyan/work            # mounts your whole project folder
+    ports:
+      - "8888:8888"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  metabase:
+    image: metabase/metabase:latest
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      MB_DB_TYPE: postgres
+      MB_DB_DBNAME: ${DB_NAME}
+      MB_DB_PORT: 5432
+      MB_DB_USER: ${DB_USER}
+      MB_DB_PASS: ${DB_PASSWORD}
+      MB_DB_HOST: postgres             # docker service name, not localhost
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  postgres_data:                       # persists DB data across restarts/rebuilds
