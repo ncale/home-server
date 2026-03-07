@@ -26,7 +26,7 @@ services:
     volumes:
       - ./:/home/jovyan/work            # mounts your whole project folder
     ports:
-      - "8888:8888"
+      - "8800:8888"
     depends_on:
       postgres:
         condition: service_healthy
@@ -35,7 +35,7 @@ services:
     image: metabase/metabase:latest
     restart: unless-stopped
     ports:
-      - "3000:3000"
+      - "3100:3000"
     environment:
       MB_DB_TYPE: postgres
       MB_DB_DBNAME: ${DB_NAME}
