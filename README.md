@@ -16,8 +16,8 @@ Before home-rolling any of these services, take a look through the [proxmox help
 | ?                          | 443   |
 | ?                          | 3001  |
 | WorldDB Metabase Dashboard | 3100  |
-| ?                          | 4000  |
-| ?                          | 4001  |
+| OpenSpeedTest              | 4000  |
+| OpenSpeedTest              | 4001  |
 | Actual Budget              | 5006  |
 | WorldDB Postgres DB        | 5432  |
 | ?                          | 7575  |
