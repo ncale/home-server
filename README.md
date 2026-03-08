@@ -18,7 +18,6 @@ Before home-rolling any of these services, take a look through the [proxmox help
 | Nginx Proxy Manager        | subnet:154 | 81    | false              |
 | ?                          | subnet:154 | 443   | false              |
 | ?                          | subnet:154 | 3001  | false              |
-| WorldDB Metabase Dashboard | subnet:154 | 3100  | false              |
 | OpenSpeedTest              | subnet:154 | 4000  | false              |
 | OpenSpeedTest              | subnet:154 | 4001  | false              |
 | Actual Budget              | subnet:154 | 5006  | false              |
