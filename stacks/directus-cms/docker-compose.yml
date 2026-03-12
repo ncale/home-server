@@ -2,13 +2,12 @@
 services:
   directus:
     image: directus/directus:11.14.1
-    container_name: directus-cms
     ports:
-      - 8055:8055
+      - "${PORT:-8055}:8055"
     volumes:
-      - /root/directus/database:/directus/database
-      - /root/directus/uploads:/directus/uploads
-      - /root/directus/extensions:/directus/extensions
+      - ${DATA_PATH:-/root/directus}/database:/directus/database
+      - ${DATA_PATH:-/root/directus}/uploads:/directus/uploads
+      - ${DATA_PATH:-/root/directus}/extensions:/directus/extensions
     environment:
       SECRET: ${SECRET}
       DB_CLIENT: ${DB_CLIENT}
