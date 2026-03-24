@@ -25,6 +25,12 @@ IPs are assigned via DHCP reservation on the router by MAC address, starting at 
 - Nginx Proxy Manager handles routing to individual services and SSL termination
 - SSL certificates issued by Let's Encrypt via Cloudflare DNS challenge
 
+**Remote Access**
+
+- Tailscale subnet router runs on the Proxmox host, exposing the full home network (192.168.0.0/24) to connected devices
+- Split DNS configured in Tailscale: local subdomains (e.g. `*.home.example.com`) route to AdGuard Home as the nameserver
+- This allows local domains to resolve correctly over Tailscale without exposing any services publicly
+
 ## Notes
 
 - iGPU passthrough configured on the Jellyfin LXC for hardware transcoding
