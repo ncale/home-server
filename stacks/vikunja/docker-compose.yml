@@ -5,12 +5,13 @@ services:
     ports:
       - "${VIKUNJA_PORT:-3456}:3456"
     volumes:
-      - vikunja-data:/app/vikunja/files
+      - vikunja-files:/app/vikunja/files
+      - vikunja-db:/db
     environment:
-      VIKUNJA_DATABASE_TYPE: sqlite
-      VIKUNJA_DATABASE_PATH: /app/vikunja/files/vikunja.db
+      VIKUNJA_DATABASE_PATH: /db/vikunja.db
       VIKUNJA_SERVICE_JWTSECRET: ${JWT_SECRET}
-      VIKUNJA_SERVICE_FRONTENDURL: ${VIKUNJA_URL}
+      VIKUNJA_SERVICE_PUBLICURL: ${VIKUNJA_URL}
 
 volumes:
-  vikunja-data:
+  vikunja-files:
+  vikunja-db:

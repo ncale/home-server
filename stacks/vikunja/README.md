@@ -1,12 +1,14 @@
 # Vikunja
 
+Ref: <https://vikunja.io/docs/full-docker-example/#sqlite>
+
 ## First boot
 
 ```bash
 # 1. Generate a JWT secret and set it in `.env`
 openssl rand -hex 32
 
-# 2. Set `VIKUNJA_URL` to the public-facing URL (e.g. `https://vikunja.home`). Used for redirect links and sharing.
+# 2. Set `VIKUNJA_URL` to the public-facing URL — must have a trailing slash (e.g. `https://vikunja.home/`)
 
 # 3. Start
 docker compose up -d
@@ -16,11 +18,11 @@ docker compose up -d
 
 ## Maintenance
 
-**Backup:** The SQLite database and all file attachments are in the `vikunja-data` volume at `/app/vikunja/files/`. Back up that directory.
+**Backup:** Files are in `vikunja-files`, the SQLite database is in `vikunja-db` (at `/db/vikunja.db`). Back up both volumes.
 
 ```sh
-docker run --rm -v vikunja_vikunja-data:/data -v $(pwd):/backup alpine \
-  tar czf /backup/vikunja-backup.tar.gz -C /data .
+docker run --rm -v vikunja_vikunja-files:/files -v vikunja_vikunja-db:/db -v $(pwd):/backup alpine \
+  tar czf /backup/vikunja-backup.tar.gz -C / files db
 ```
 
 **Upgrade:** `docker compose pull && docker compose up -d`
