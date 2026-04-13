@@ -5,7 +5,7 @@ Ref: <https://vikunja.io/docs/full-docker-example/#sqlite>
 ## First boot
 
 ```bash
-# 1. Generate a JWT secret and set it in `.env`
+# 1. Generate a secret and set SECRET= in `.env`
 openssl rand -hex 32
 
 # 2. Set `VIKUNJA_URL` to the public-facing URL — must have a trailing slash (e.g. `https://vikunja.home/`)

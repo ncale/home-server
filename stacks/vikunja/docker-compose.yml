@@ -2,6 +2,7 @@ services:
   vikunja:
     image: vikunja/vikunja:latest
     restart: unless-stopped
+    user: "0:0"
     ports:
       - "${VIKUNJA_PORT:-3456}:3456"
     volumes:
@@ -9,7 +10,7 @@ services:
       - vikunja-db:/db
     environment:
       VIKUNJA_DATABASE_PATH: /db/vikunja.db
-      VIKUNJA_SERVICE_JWTSECRET: ${JWT_SECRET}
+      VIKUNJA_SERVICE_SECRET: ${SECRET}
       VIKUNJA_SERVICE_PUBLICURL: ${VIKUNJA_URL}
 
 volumes:
