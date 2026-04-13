@@ -1,0 +1,16 @@
+services:
+  calibre-web:
+    image: lscr.io/linuxserver/calibre-web:latest
+    restart: unless-stopped
+    ports:
+      - "${CALIBRE_WEB_PORT:-8083}:8083"
+    volumes:
+      - calibre-web-config:/config
+      - ${BOOKS_DIR}:/books
+    environment:
+      PUID: 1000
+      PGID: 1000
+      DOCKER_MODS: linuxserver/mods:universal-calibre
+
+volumes:
+  calibre-web-config:
