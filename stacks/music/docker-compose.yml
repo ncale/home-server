@@ -1,0 +1,29 @@
+services:
+  navidrome:
+    image: deluan/navidrome:latest
+    restart: unless-stopped
+    ports:
+      - "${NAVIDROME_PORT:-4533}:4533"
+    volumes:
+      - navidrome-data:/data
+      - ${MUSIC_DIR}:/music:ro
+    environment:
+      ND_MUSICFOLDER: /music
+      ND_DATAFOLDER: /data
+      ND_LOGLEVEL: info
+
+  beets:
+    image: lscr.io/linuxserver/beets:latest
+    restart: unless-stopped
+    ports:
+      - "${BEETS_PORT:-8337}:8337"
+    volumes:
+      - beets-config:/config
+      - ${MUSIC_DIR}:/music
+    environment:
+      PUID: 1000
+      PGID: 1000
+
+volumes:
+  navidrome-data:
+  beets-config:
