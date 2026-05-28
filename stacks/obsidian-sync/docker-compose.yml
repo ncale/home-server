@@ -1,0 +1,18 @@
+services:
+  couchdb:
+    image: couchdb:3
+    restart: unless-stopped
+    environment:
+      - COUCHDB_USER=${COUCHDB_USER}
+      - COUCHDB_PASSWORD=${COUCHDB_PASSWORD}
+      - COUCHDB_SECRET=obsidian_livesync_secret
+      # Enable CORS for Obsidian LiveSync
+      - COUCHDB_CORS_ORIGINS=*
+      - COUCHDB_CORS_CREDENTIALS=true
+    ports:
+      - "${COUCHDB_PORT}:5984"
+    volumes:
+      - couchdb_data:/opt/couchdb/data
+
+volumes:
+  couchdb_data:
