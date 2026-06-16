@@ -14,6 +14,7 @@ services:
       - DB_HOST=db
       - DB_USERNAME=usermonica
       - DB_PASSWORD=secret
+      - TRUSTED_PROXIES=*
     volumes:
       - data:/var/www/html/storage
     restart: always
