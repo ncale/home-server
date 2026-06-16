@@ -10,6 +10,7 @@ services:
       - 8080:80
     environment:
       - APP_KEY=${APP_KEY}
+      - APP_URL=${APP_URL}
       - DB_HOST=db
       - DB_USERNAME=usermonica
       - DB_PASSWORD=secret
