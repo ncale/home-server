@@ -35,6 +35,13 @@ services:
     container_name: grampsweb_redis
     restart: always
 
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    restart: always
+    command: tunnel run
+    environment:
+      - TUNNEL_TOKEN=${CF_TUNNEL_TOKEN}
+
 volumes:
   gramps_users:
   gramps_index:
