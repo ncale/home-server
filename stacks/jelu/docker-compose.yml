@@ -4,12 +4,13 @@ services:
     restart: unless-stopped
     ports:
       - "11111:11111"
+    environment:
+      - TZ=America/Chicago
     volumes:
       - jelu-config:/config
       - jelu-database:/database
       - jelu-images:/files/images
       - jelu-imports:/files/imports
-      - /etc/timezone:/etc/timezone:ro
 
 volumes:
   jelu-config:
