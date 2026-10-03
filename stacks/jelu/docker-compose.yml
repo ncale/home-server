@@ -1,0 +1,18 @@
+services:
+  jelu:
+    image: wabayang/jelu
+    restart: unless-stopped
+    ports:
+      - "11111:11111"
+    volumes:
+      - jelu-config:/config
+      - jelu-database:/database
+      - jelu-images:/files/images
+      - jelu-imports:/files/imports
+      - /etc/timezone:/etc/timezone:ro
+
+volumes:
+  jelu-config:
+  jelu-database:
+  jelu-images:
+  jelu-imports:
