@@ -11,7 +11,7 @@
 #
 # - Instead of SQLite (default), PostgreSQL is used as the database server.
 #
-# To see the source of this file, see 
+# To see the source of this file, see
 # https://github.com/paperless-ngx/paperless-ngx/blob/dev/docker/compose/docker-compose.portainer.yml
 services:
   broker:
@@ -44,7 +44,9 @@ services:
     environment:
       PAPERLESS_REDIS: redis://broker:6379
       PAPERLESS_DBHOST: db
+      PAPERLESS_OCR_USER_ARGS: '{"continue_on_soft_render_error": true}'
       PAPERLESS_URL: ${PAPERLESS_URL}
+      PAPERLESS_SECRET_KEY: ${PAPERLESS_SECRET_KEY}
 volumes:
   data:
   media:
