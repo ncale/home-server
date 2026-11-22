@@ -15,9 +15,57 @@
 		}
 	}
 
-	@adguard host adguard..{$DOMAIN}
+	@router host router.{$DOMAIN}
+	handle @router {
+		reverse_proxy 192.168.1.1:80
+	}
+
+	@adguard host adguard.{$DOMAIN}
 	handle @adguard {
 		reverse_proxy 192.168.1.20:80
+	}
+
+	@homeassistant host homeassistant.{$DOMAIN}
+	handle @homeassistant {
+		reverse_proxy 192.168.1.22:8123
+	}
+
+	@jellyfin host jellyfin.{$DOMAIN}
+	handle @homeassistant {
+		reverse_proxy 192.168.1.23:8096
+	}
+
+	@portainer host portainer.{$DOMAIN}
+	handle @portainer {
+		reverse_proxy 192.168.1.24:9443 {
+			transport http {
+				tls_insecure_skip_verify
+			}
+		}
+	}
+	@miniflux host miniflux.{$DOMAIN}
+	handle @miniflux {
+		reverse_proxy 192.168.1.24:9001
+	}
+	@monica host monica.{$DOMAIN}
+	handle @monica {
+		reverse_proxy 192.168.1.24:8080
+	}
+	@navidrome host navidrome.{$DOMAIN}
+	handle @navidrome {
+		reverse_proxy 192.168.1.24:4533
+	}
+	@paperless host paperless.{$DOMAIN}
+	handle @paperless {
+		reverse_proxy 192.168.1.24:8010
+	}
+	@budget host budget.{$DOMAIN}
+	handle @budget {
+		reverse_proxy 192.168.1.24:5006
+	}
+	@gramps host gramps.{$DOMAIN}
+	handle @gramps {
+		reverse_proxy 192.168.1.24:5000
 	}
 
 	handle {
