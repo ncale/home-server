@@ -1,10 +1,10 @@
 # Caddy LXC
 
-Initialized this from the community-script
+Initialized from the [community-script](https://community-scripts.org/scripts/caddy).
 
 ## Deployment steps
 
-1. Copy the caddy config over to the LXC.
+1. Clone caddy config to the LXC.
 
 ```shell
 cd /opt
@@ -12,9 +12,10 @@ git clone <this-repo>
 ln -sf /opt/<this-repo>/caddy/Caddyfile /etc/caddy/Caddyfile
 ```
 
-2. Export your environment variables as needed.
-3. Start the server.
+2. Start the server (environment variables have to be exported in the shell).
 
 ```shell
+export CF_API_TOKEN=...
+export DOMAIN=...
 caddy start --config /etc/caddy/Caddyfile
 ```

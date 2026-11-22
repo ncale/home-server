@@ -1,8 +1,6 @@
 *.{$DOMAIN} {
 	tls {
 		dns cloudflare {env.CF_API_TOKEN}
-		# Query Cloudflare directly for propagation checks, so your
-		# AdGuard rewrites don't confuse the ACME challenge
 		resolvers 1.1.1.1 1.0.0.1
 	}
 
