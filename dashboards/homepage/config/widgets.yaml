@@ -1,0 +1,19 @@
+- greeting:
+    text_size: xl
+    text: Welcome home
+
+- datetime:
+    text_size: xl
+    format:
+      dateStyle: medium
+      timeStyle: short
+      hour12: true
+
+- search:
+    provider: duckduckgo
+    target: _blank
+
+- resources:
+    cpu: true
+    memory: true
+    disk: /

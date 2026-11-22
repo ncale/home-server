@@ -1,0 +1,33 @@
+title: Home
+theme: dark
+color: slate
+headerStyle: clean
+hideVersion: true
+useEqualHeights: true
+
+layout:
+  Media:
+    tab: Home
+    style: row
+    columns: 3
+  Household:
+    tab: Home
+    style: row
+    columns: 3
+  Everyday:
+    tab: Home
+    style: row
+    columns: 4
+
+  Infrastructure:
+    tab: Dev
+    style: row
+    columns: 4
+  Monitoring:
+    tab: Dev
+    style: row
+    columns: 3
+  Dev Links:
+    tab: Dev
+    style: row
+    columns: 4

@@ -1,0 +1,90 @@
+# ---------- HOME TAB ----------
+- Media:
+    - Jellyfin:
+        icon: jellyfin
+        href: https://jellyfin.{{HOMEPAGE_VAR_DOMAIN}}
+        description: Movies & TV
+
+    - Navidrome:
+        icon: navidrome
+        href: https://navidrome.{{HOMEPAGE_VAR_DOMAIN}}
+        description: Music
+
+    - Miniflux:
+        icon: miniflux
+        href: https://miniflux.{{HOMEPAGE_VAR_DOMAIN}}
+        description: News feeds
+
+- Household:
+    - Home Assistant:
+        icon: home-assistant
+        href: https://homeassistant.{{HOMEPAGE_VAR_DOMAIN}}
+        description: Smart home
+
+    - Paperless:
+        icon: paperless-ngx
+        href: https://paperless.{{HOMEPAGE_VAR_DOMAIN}}
+        description: Documents
+
+    - Actual Budget:
+        icon: actual-budget
+        href: https://budget.{{HOMEPAGE_VAR_DOMAIN}}
+        description: Budgeting
+
+    - Monica:
+        icon: mdi-account-heart
+        href: https://monica.{{HOMEPAGE_VAR_DOMAIN}}
+        description: Contacts & relationships
+
+    - Gramps:
+        icon: mdi-family-tree
+        href: https://gramps.{{HOMEPAGE_VAR_DOMAIN}}
+        description: Family tree
+
+# ---------- DEV TAB ----------
+- Infrastructure:
+    - Proxmox:
+        icon: proxmox
+        href: https://proxmox.{{HOMEPAGE_VAR_DOMAIN}}
+        description: Hypervisor
+        widget:
+          type: proxmox
+          url: https://192.168.1.150:8006
+          username: homepage@pve!homepage
+          password: "{{HOMEPAGE_VAR_PROXMOX_TOKEN}}"
+          node: pve
+
+    - Portainer:
+        icon: portainer
+        href: https://portainer.{{HOMEPAGE_VAR_DOMAIN}}
+        description: Docker on .24
+
+    - AdGuard Home:
+        icon: adguard-home
+        href: https://adguard.{{HOMEPAGE_VAR_DOMAIN}}
+        description: DNS
+
+    - Router:
+        icon: mdi-router-wireless
+        href: https://router.{{HOMEPAGE_VAR_DOMAIN}}
+        description: Gateway
+
+- Monitoring:
+    - Uptime Kuma:
+        icon: uptime-kuma
+        href: https://kuma.{{HOMEPAGE_VAR_DOMAIN}}
+        description: Up/down checks
+        widget:
+          type: uptimekuma
+          url: http://192.168.1.17:3001
+          slug: default
+
+    - Dozzle:
+        icon: dozzle
+        href: https://dozzle.{{HOMEPAGE_VAR_DOMAIN}}
+        description: Container logs
+
+    - Glances:
+        icon: glances
+        href: https://glances.{{HOMEPAGE_VAR_DOMAIN}}
+        description: System stats
