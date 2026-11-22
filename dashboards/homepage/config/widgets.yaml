@@ -1,17 +1,13 @@
 - greeting:
     text_size: xl
-    text: Welcome home
+    text: Welcome
 
 - datetime:
-    text_size: xl
+    text_size: lg
     format:
       dateStyle: medium
       timeStyle: short
       hour12: true
-
-- search:
-    provider: duckduckgo
-    target: _blank
 
 - resources:
     cpu: true

@@ -9,15 +9,11 @@ layout:
   Media:
     tab: Home
     style: row
-    columns: 3
+    columns: 2
   Household:
     tab: Home
     style: row
-    columns: 3
-  Everyday:
-    tab: Home
-    style: row
-    columns: 4
+    columns: 2
 
   Infrastructure:
     tab: Dev
@@ -30,4 +26,4 @@ layout:
   Dev Links:
     tab: Dev
     style: row
-    columns: 4
+    columns: 2
