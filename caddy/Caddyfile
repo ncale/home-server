@@ -1,0 +1,26 @@
+*.{$DOMAIN} {
+	tls {
+		dns cloudflare {env.CF_API_TOKEN}
+		# Query Cloudflare directly for propagation checks, so your
+		# AdGuard rewrites don't confuse the ACME challenge
+		resolvers 1.1.1.1 1.0.0.1
+	}
+
+	@proxmox host proxmox.{$DOMAIN}
+	handle @proxmox {
+		reverse_proxy https://192.168.1.150:8006 {
+			transport http {
+				tls_insecure_skip_verify
+			}
+		}
+	}
+
+	@adguard host adguard..{$DOMAIN}
+	handle @adguard {
+		reverse_proxy 192.168.1.20:80
+	}
+
+	handle {
+		respond "Unknown service" 404
+	}
+}
