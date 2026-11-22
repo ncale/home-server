@@ -23,6 +23,23 @@
 		reverse_proxy 192.168.1.20:80
 	}
 
+	@homepage host {$DOMAIN}
+	handle @homepage {
+		reverse_proxy 192.168.1.17:3000
+	}
+	@kuma host kuma.{$DOMAIN}
+	handle @kuma {
+		reverse_proxy 192.168.1.17:3001
+	}
+	@dozzle host dozzle.{$DOMAIN}
+	handle @dozzle {
+		reverse_proxy 192.168.1.17:8080
+	}
+	@glances host glances.{$DOMAIN}
+	handle @glances {
+		reverse_proxy 192.168.1.17:61208
+	}
+
 	@homeassistant host homeassistant.{$DOMAIN}
 	handle @homeassistant {
 		reverse_proxy 192.168.1.22:8123
