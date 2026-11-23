@@ -1,89 +1,89 @@
 *.{$DOMAIN}, {$DOMAIN} {
-	tls {
-		dns cloudflare {env.CF_API_TOKEN}
-		resolvers 1.1.1.1 1.0.0.1
-	}
+        tls {
+                dns cloudflare {env.CF_API_TOKEN}
+                resolvers 1.1.1.1 1.0.0.1
+        }
 
-	@proxmox host proxmox.{$DOMAIN}
-	handle @proxmox {
-		reverse_proxy https://192.168.1.150:8006 {
-			transport http {
-				tls_insecure_skip_verify
-			}
-		}
-	}
+        @proxmox host proxmox.{$DOMAIN}
+        handle @proxmox {
+                reverse_proxy https://192.168.1.150:8006 {
+                        transport http {
+                                tls_insecure_skip_verify
+                        }
+                }
+        }
 
-	@router host router.{$DOMAIN}
-	handle @router {
-		reverse_proxy 192.168.1.1:80
-	}
+        @router host router.{$DOMAIN}
+        handle @router {
+                reverse_proxy 192.168.1.1:80
+        }
 
-	@adguard host adguard.{$DOMAIN}
-	handle @adguard {
-		reverse_proxy 192.168.1.20:80
-	}
+        @adguard host adguard.{$DOMAIN}
+        handle @adguard {
+                reverse_proxy 192.168.1.20:80
+        }
 
-	@homepage host {$DOMAIN}
-	handle @homepage {
-		reverse_proxy 192.168.1.17:3000
-	}
-	@kuma host kuma.{$DOMAIN}
-	handle @kuma {
-		reverse_proxy 192.168.1.17:3001
-	}
-	@dozzle host dozzle.{$DOMAIN}
-	handle @dozzle {
-		reverse_proxy 192.168.1.17:8080
-	}
-	@glances host glances.{$DOMAIN}
-	handle @glances {
-		reverse_proxy 192.168.1.17:61208
-	}
+        @homepage host {$DOMAIN}
+        handle @homepage {
+                reverse_proxy 192.168.1.17:3000
+        }
+        @kuma host kuma.{$DOMAIN}
+        handle @kuma {
+                reverse_proxy 192.168.1.17:3001
+        }
+        @dozzle host dozzle.{$DOMAIN}
+        handle @dozzle {
+                reverse_proxy 192.168.1.17:8080
+        }
+        @glances host glances.{$DOMAIN}
+        handle @glances {
+                reverse_proxy 192.168.1.17:61208
+        }
 
-	@homeassistant host homeassistant.{$DOMAIN}
-	handle @homeassistant {
-		reverse_proxy 192.168.1.22:8123
-	}
+        @homeassistant host homeassistant.{$DOMAIN}
+        handle @homeassistant {
+                reverse_proxy 192.168.1.22:8123
+        }
 
-	@jellyfin host jellyfin.{$DOMAIN}
-	handle @jellyfin {
-		reverse_proxy 192.168.1.23:8096
-	}
+        @jellyfin host jellyfin.{$DOMAIN}
+        handle @jellyfin {
+                reverse_proxy 192.168.1.23:8096
+        }
 
-	@portainer host portainer.{$DOMAIN}
-	handle @portainer {
-		reverse_proxy 192.168.1.24:9443 {
-			transport http {
-				tls_insecure_skip_verify
-			}
-		}
-	}
-	@miniflux host miniflux.{$DOMAIN}
-	handle @miniflux {
-		reverse_proxy 192.168.1.24:9001
-	}
-	@monica host monica.{$DOMAIN}
-	handle @monica {
-		reverse_proxy 192.168.1.24:8080
-	}
-	@navidrome host navidrome.{$DOMAIN}
-	handle @navidrome {
-		reverse_proxy 192.168.1.24:4533
-	}
-	@paperless host paperless.{$DOMAIN}
-	handle @paperless {
-		reverse_proxy 192.168.1.24:8010
-	}
-	@budget host budget.{$DOMAIN}
-	handle @budget {
-		reverse_proxy 192.168.1.24:5006
-	}
-	@gramps host gramps.{$DOMAIN}
-	handle @gramps {
-		reverse_proxy 192.168.1.24:5000
-	}
+        @portainer host portainer.{$DOMAIN}
+        handle @portainer {
+                reverse_proxy 192.168.1.24:9443 {
+                        transport http {
+                                tls_insecure_skip_verify
+                        }
+                }
+        }
+        @miniflux host miniflux.{$DOMAIN}
+        handle @miniflux {
+                reverse_proxy 192.168.1.24:9001
+        }
+        @monica host monica.{$DOMAIN}
+        handle @monica {
+                reverse_proxy 192.168.1.24:8080
+        }
+        @navidrome host navidrome.{$DOMAIN}
+        handle @navidrome {
+                reverse_proxy 192.168.1.24:4533
+        }
+        @paperless host paperless.{$DOMAIN}
+        handle @paperless {
+                reverse_proxy 192.168.1.24:8010
+        }
+        @budget host budget.{$DOMAIN}
+        handle @budget {
+                reverse_proxy 192.168.1.24:5006
+        }
+        @gramps host gramps.{$DOMAIN}
+        handle @gramps {
+                reverse_proxy 192.168.1.24:5000
+        }
 
-	handle {
-		respond "Unknown service" 404
-	}
+        handle {
+                respond "Unknown service" 404
+        }
 }
