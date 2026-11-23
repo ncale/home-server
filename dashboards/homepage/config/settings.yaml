@@ -13,10 +13,6 @@ layout:
   Infrastructure:
     tab: Home
 
-  Infrastructure:
-    tab: Dev
-    style: row
-    columns: 4
   Monitoring:
     tab: Dev
     style: row
