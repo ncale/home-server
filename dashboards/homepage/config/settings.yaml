@@ -6,14 +6,12 @@ hideVersion: true
 useEqualHeights: true
 
 layout:
-  Applications:
+  Media:
     tab: Home
-    style: row
-    columns: 2
   Household:
     tab: Home
-    style: row
-    columns: 2
+  Infrastructure:
+    tab: Home
 
   Infrastructure:
     tab: Dev

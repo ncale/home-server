@@ -1,5 +1,5 @@
 # ---------- HOME TAB ----------
-- Applications:
+- Media:
     - Jellyfin:
         icon: jellyfin
         href: https://jellyfin.{{HOMEPAGE_VAR_DOMAIN}}
