@@ -1,5 +1,5 @@
 # ---------- HOME TAB ----------
-- Media:
+- Applications:
     - Jellyfin:
         icon: jellyfin
         href: https://jellyfin.{{HOMEPAGE_VAR_DOMAIN}}
@@ -52,7 +52,7 @@
           url: https://192.168.1.150:8006
           username: homepage@pve!homepage
           password: "{{HOMEPAGE_VAR_PROXMOX_TOKEN}}"
-          node: pve
+          node: pve-01
 
     - Portainer:
         icon: portainer
