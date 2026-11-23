@@ -4,11 +4,13 @@
         icon: jellyfin
         href: https://jellyfin.{{HOMEPAGE_VAR_DOMAIN}}
         description: Movies & TV
+        siteMonitor: http://192.168.1.23:8096
 
     - Navidrome:
         icon: navidrome
         href: https://navidrome.{{HOMEPAGE_VAR_DOMAIN}}
         description: Music
+        siteMonitor: http://192.168.1.24:4533
 
     - Miniflux:
         icon: miniflux
@@ -20,11 +22,13 @@
         icon: home-assistant
         href: https://homeassistant.{{HOMEPAGE_VAR_DOMAIN}}
         description: Smart home
+        siteMonitor: http://192.168.1.22:8123
 
     - Paperless:
         icon: paperless-ngx
         href: https://paperless.{{HOMEPAGE_VAR_DOMAIN}}
         description: Documents
+        siteMonitor: http://192.168.1.24:8010
 
     - Actual Budget:
         icon: actual-budget
@@ -47,6 +51,7 @@
         icon: proxmox
         href: https://proxmox.{{HOMEPAGE_VAR_DOMAIN}}
         description: Hypervisor
+        siteMonitor: https://192.168.1.150:8006
         widget:
           type: proxmox
           url: https://192.168.1.150:8006
@@ -58,11 +63,13 @@
         icon: portainer
         href: https://portainer.{{HOMEPAGE_VAR_DOMAIN}}
         description: Docker on .24
+        siteMonitor: https://192.168.1.24:9443
 
     - AdGuard Home:
         icon: adguard-home
         href: https://adguard.{{HOMEPAGE_VAR_DOMAIN}}
         description: DNS
+        siteMonitor: http://192.168.1.20:80
 
     - Router:
         icon: mdi-router-wireless
