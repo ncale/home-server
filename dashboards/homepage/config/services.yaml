@@ -1,16 +1,22 @@
 # ---------- HOME TAB ----------
 - Applications:
-    - Jellyfin:
-        icon: jellyfin
-        href: https://jellyfin.{{HOMEPAGE_VAR_DOMAIN}}
-        description: Movies & TV
-        siteMonitor: http://192.168.1.23:8096
-
     - Navidrome:
         icon: navidrome
         href: https://navidrome.{{HOMEPAGE_VAR_DOMAIN}}
         description: Music
         siteMonitor: http://192.168.1.24:4533
+        widget:
+          type: navidrome
+          url: http://navidrome.host.or.ip:port
+          user: "{{HOMEPAGE_VAR_NAVIDROME_USER}}"
+          token: "{{HOMEPAGE_VAR_NAVIDROME_TOKEN}}"
+          salt: "{{HOMEPAGE_VAR_NAVIDROME_SALT}}"
+
+    - Jellyfin:
+        icon: jellyfin
+        href: https://jellyfin.{{HOMEPAGE_VAR_DOMAIN}}
+        description: Movies & TV
+        siteMonitor: http://192.168.1.23:8096
 
     - Miniflux:
         icon: miniflux
