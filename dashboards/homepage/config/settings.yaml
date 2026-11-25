@@ -11,12 +11,3 @@ layout:
     columns: 2
   Infrastructure:
     tab: Home
-
-  Monitoring:
-    tab: Dev
-    style: row
-    columns: 3
-  Dev Links:
-    tab: Dev
-    style: row
-    columns: 2
