@@ -6,10 +6,9 @@ hideVersion: true
 useEqualHeights: true
 
 layout:
-  Media:
+  Applications:
     tab: Home
-  Household:
-    tab: Home
+    columns: 2
   Infrastructure:
     tab: Home
 
