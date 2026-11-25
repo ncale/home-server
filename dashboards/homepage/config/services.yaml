@@ -62,6 +62,11 @@
         href: https://adguard.{{HOMEPAGE_VAR_DOMAIN}}
         description: DNS
         siteMonitor: http://192.168.1.20:80
+        widget:
+          type: adguard
+          url: http://192.168.1.20:80
+          username: "{{HOMEPAGE_VAR_ADGUARD_USERNAME}}"
+          password: "{{HOMEPAGE_VAR_ADGUARD_PASSWORD}}"
 
     - Portainer:
         icon: portainer
