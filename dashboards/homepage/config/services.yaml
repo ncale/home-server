@@ -7,7 +7,7 @@
         siteMonitor: http://192.168.1.24:4533
         widget:
           type: navidrome
-          url: http://navidrome.host.or.ip:port
+          url: http://192.168.1.24:4533
           user: "{{HOMEPAGE_VAR_NAVIDROME_USER}}"
           token: "{{HOMEPAGE_VAR_NAVIDROME_TOKEN}}"
           salt: "{{HOMEPAGE_VAR_NAVIDROME_SALT}}"
