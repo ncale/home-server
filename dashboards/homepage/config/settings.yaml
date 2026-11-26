@@ -17,9 +17,11 @@ layout:
   Proxmox:
     tab: System
     Node:
+      header: false
       style: row
       columns: 1
     Children:
+      header: false
       style: row
       columns: 4
   Network:
