@@ -21,27 +21,31 @@
         icon: miniflux
         href: https://miniflux.{{HOMEPAGE_VAR_DOMAIN}}
         description: News feeds
+        siteMonitor: http://192.168.1.24:9001
 
     - Paperless:
         icon: paperless-ngx
         href: https://paperless.{{HOMEPAGE_VAR_DOMAIN}}
-        description: Documents
+        description: Digital document management
         siteMonitor: http://192.168.1.24:8010
 
     - Actual Budget:
         icon: actual-budget
         href: https://budget.{{HOMEPAGE_VAR_DOMAIN}}
         description: Budgeting
+        siteMonitor: http://192.168.1.24:5006
 
     - Monica:
         icon: mdi-account-heart
         href: https://monica.{{HOMEPAGE_VAR_DOMAIN}}
-        description: Contacts & relationships
+        description: Contact & relationship management
+        siteMonitor: http://192.168.1.24:8080
 
     - Gramps:
         icon: mdi-family-tree
         href: https://gramps.{{HOMEPAGE_VAR_DOMAIN}}
         description: Family tree
+        siteMonitor: http://192.168.1.24:5000
 
 - Containers & Other:
     - Portainer:
