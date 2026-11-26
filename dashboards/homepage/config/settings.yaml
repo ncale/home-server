@@ -4,7 +4,7 @@ color: zinc
 headerStyle: boxed
 useEqualHeights: true
 showStats: true
-statusStyle: "dot"
+statusStyle: "basic"
 
 layout:
   Applications:
