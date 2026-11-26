@@ -16,9 +16,17 @@ layout:
 
   Proxmox:
     tab: System
+    style: row
+    columns: 4
   Network:
     tab: System
+    style: row
+    columns: 2
   Containers & Other:
     tab: System
+    style: row
+    columns: 3
   Quick Links:
     tab: System
+    style: row
+    columns: 5
