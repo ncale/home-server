@@ -16,8 +16,12 @@ layout:
 
   Proxmox:
     tab: System
-    style: row
-    columns: 4
+    Node:
+      style: row
+      columns: 1
+    Children:
+      style: row
+      columns: 4
   Network:
     tab: System
     style: row

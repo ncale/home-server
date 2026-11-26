@@ -76,59 +76,60 @@
         description: System stats
 
 - Proxmox:
-    - Main Node:
-        icon: proxmox
-        href: https://proxmox.{{HOMEPAGE_VAR_DOMAIN}}
-        description: Hypervisor
-        widget:
-          type: proxmox
-          url: https://192.168.1.150:8006
-          node: pve-01
-          username: "{{HOMEPAGE_VAR_PROXMOX_TOKEN}}"
-          password: "{{HOMEPAGE_VAR_PROXMOX_SECRET}}"
+    - Node:
+        - pve-01:
+            icon: proxmox
+            href: https://proxmox.{{HOMEPAGE_VAR_DOMAIN}}
+            description: Hypervisor
+            widget:
+              type: proxmox
+              url: https://192.168.1.150:8006
+              node: pve-01
+              username: "{{HOMEPAGE_VAR_PROXMOX_TOKEN}}"
+              password: "{{HOMEPAGE_VAR_PROXMOX_SECRET}}"
 
-    - caddy LXC:
-        icon: caddy.png
-        href: https://proxmox.{{HOMEPAGE_VAR_DOMAIN}}
-        description: Hosts a Caddy instance
-        proxmoxNode: pve-01
-        proxmoxType: lxc
-        proxmoxVMID: 106
-    - fileshare LXC:
-        icon: files.png
-        href: https://proxmox.{{HOMEPAGE_VAR_DOMAIN}}
-        proxmoxNode: pve-01
-        proxmoxType: lxc
-        proxmoxVMID: 107
-    - docker LXC:
-        icon: docker.png
-        href: https://proxmox.{{HOMEPAGE_VAR_DOMAIN}}
-        proxmoxNode: pve-01
-        proxmoxType: lxc
-        proxmoxVMID: 103
-    - adguard LXC:
-        icon: adguard-home.png
-        href: https://proxmox.{{HOMEPAGE_VAR_DOMAIN}}
-        proxmoxNode: pve-01
-        proxmoxType: lxc
-        proxmoxVMID: 104
-    - jellyfin LXC:
-        icon: jellyfin.png
-        href: https://proxmox.{{HOMEPAGE_VAR_DOMAIN}}
-        proxmoxNode: pve-01
-        proxmoxType: lxc
-        proxmoxVMID: 100
-    - dashboards LXC:
-        icon: dashboard.png
-        href: https://proxmox.{{HOMEPAGE_VAR_DOMAIN}}
-        proxmoxNode: pve-01
-        proxmoxType: lxc
-        proxmoxVMID: 108
-    - Home Assistant VM:
-        icon: home-assistant.png
-        href: https://proxmox.{{HOMEPAGE_VAR_DOMAIN}}
-        proxmoxNode: pve-01
-        proxmoxVMID: 102
+    - Children:
+        - caddy LXC:
+            href: https://proxmox.{{HOMEPAGE_VAR_DOMAIN}}
+            description: Reverse proxy
+            proxmoxNode: pve-01
+            proxmoxType: lxc
+            proxmoxVMID: 106
+        - fileshare LXC:
+            href: https://proxmox.{{HOMEPAGE_VAR_DOMAIN}}
+            description: Exposes mounted folders for file management
+            proxmoxNode: pve-01
+            proxmoxType: lxc
+            proxmoxVMID: 107
+        - docker LXC:
+            href: https://proxmox.{{HOMEPAGE_VAR_DOMAIN}}
+            description: Hosts applications
+            proxmoxNode: pve-01
+            proxmoxType: lxc
+            proxmoxVMID: 103
+        - adguard LXC:
+            href: https://proxmox.{{HOMEPAGE_VAR_DOMAIN}}
+            description: Primary DNS server
+            proxmoxNode: pve-01
+            proxmoxType: lxc
+            proxmoxVMID: 104
+        - jellyfin LXC:
+            href: https://proxmox.{{HOMEPAGE_VAR_DOMAIN}}
+            description: Media server with iGPU passthrough
+            proxmoxNode: pve-01
+            proxmoxType: lxc
+            proxmoxVMID: 100
+        - dashboards LXC:
+            href: https://proxmox.{{HOMEPAGE_VAR_DOMAIN}}
+            description: Hosts dashboards and observability services
+            proxmoxNode: pve-01
+            proxmoxType: lxc
+            proxmoxVMID: 108
+        - Home Assistant VM:
+            href: https://proxmox.{{HOMEPAGE_VAR_DOMAIN}}
+            description: Home automation
+            proxmoxNode: pve-01
+            proxmoxVMID: 102
 
 - Network:
     - AdGuard:
