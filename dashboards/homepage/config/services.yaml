@@ -1,4 +1,3 @@
-# ---------- HOME TAB ----------
 - Applications:
     - Navidrome:
         icon: navidrome
@@ -44,40 +43,17 @@
         href: https://gramps.{{HOMEPAGE_VAR_DOMAIN}}
         description: Family tree
 
-- Infrastructure:
-    - Router:
-        icon: mdi-router-wireless
-        href: https://router.{{HOMEPAGE_VAR_DOMAIN}}
-        description: Gateway
-
-    - Proxmox:
-        icon: proxmox
-        href: https://proxmox.{{HOMEPAGE_VAR_DOMAIN}}
-        description: Hypervisor
-        siteMonitor: https://192.168.1.150:8006
-        widget:
-          type: proxmox
-          url: https://192.168.1.150:8006
-          username: homepage@pve!homepage
-          password: "{{HOMEPAGE_VAR_PROXMOX_TOKEN}}"
-          node: pve-01
-
-    - AdGuard Home:
-        icon: adguard-home
-        href: https://adguard.{{HOMEPAGE_VAR_DOMAIN}}
-        description: DNS
-        siteMonitor: http://192.168.1.20:80
-        widget:
-          type: adguard
-          url: http://192.168.1.20:80
-          username: "{{HOMEPAGE_VAR_ADGUARD_USERNAME}}"
-          password: "{{HOMEPAGE_VAR_ADGUARD_PASSWORD}}"
-
+- Containers & Other:
     - Portainer:
         icon: portainer
         href: https://portainer.{{HOMEPAGE_VAR_DOMAIN}}
         description: Docker on .24
         siteMonitor: https://192.168.1.24:9443
+
+    - Dozzle:
+        icon: dozzle
+        href: https://dozzle.{{HOMEPAGE_VAR_DOMAIN}}
+        description: Container logs
 
     - Home Assistant:
         icon: home-assistant
@@ -94,12 +70,79 @@
           url: http://192.168.1.17:3001
           slug: applications
 
-    - Dozzle:
-        icon: dozzle
-        href: https://dozzle.{{HOMEPAGE_VAR_DOMAIN}}
-        description: Container logs
-
     - Glances:
         icon: glances
         href: https://glances.{{HOMEPAGE_VAR_DOMAIN}}
         description: System stats
+
+- Proxmox:
+    - Main Node:
+        icon: proxmox
+        href: https://proxmox.{{HOMEPAGE_VAR_DOMAIN}}
+        description: Hypervisor
+        widget:
+          type: proxmox
+          url: https://192.168.1.150:8006
+          node: pve-01
+          username: "{{HOMEPAGE_VAR_PROXMOX_TOKEN}}"
+          password: "{{HOMEPAGE_VAR_PROXMOX_SECRET}}"
+
+    - caddy LXC:
+        icon: caddy.png
+        href: https://proxmox.{{HOMEPAGE_VAR_DOMAIN}}
+        description: Hosts a Caddy instance
+        proxmoxNode: pve-01
+        proxmoxType: lxc
+        proxmoxVMID: 106
+    - fileshare LXC:
+        icon: files.png
+        href: https://proxmox.{{HOMEPAGE_VAR_DOMAIN}}
+        proxmoxNode: pve-01
+        proxmoxType: lxc
+        proxmoxVMID: 107
+    - docker LXC:
+        icon: docker.png
+        href: https://proxmox.{{HOMEPAGE_VAR_DOMAIN}}
+        proxmoxNode: pve-01
+        proxmoxType: lxc
+        proxmoxVMID: 103
+    - adguard LXC:
+        icon: adguard-home.png
+        href: https://proxmox.{{HOMEPAGE_VAR_DOMAIN}}
+        proxmoxNode: pve-01
+        proxmoxType: lxc
+        proxmoxVMID: 104
+    - jellyfin LXC:
+        icon: jellyfin.png
+        href: https://proxmox.{{HOMEPAGE_VAR_DOMAIN}}
+        proxmoxNode: pve-01
+        proxmoxType: lxc
+        proxmoxVMID: 100
+    - dashboards LXC:
+        icon: dashboard.png
+        href: https://proxmox.{{HOMEPAGE_VAR_DOMAIN}}
+        proxmoxNode: pve-01
+        proxmoxType: lxc
+        proxmoxVMID: 108
+    - Home Assistant VM:
+        icon: home-assistant.png
+        href: https://proxmox.{{HOMEPAGE_VAR_DOMAIN}}
+        proxmoxNode: pve-01
+        proxmoxVMID: 102
+
+- Network:
+    - AdGuard:
+        icon: adguard-home
+        href: https://adguard.{{HOMEPAGE_VAR_DOMAIN}}
+        description: DNS
+        siteMonitor: http://192.168.1.20:80
+        widget:
+          type: adguard
+          url: http://192.168.1.20:80
+          username: "{{HOMEPAGE_VAR_ADGUARD_USERNAME}}"
+          password: "{{HOMEPAGE_VAR_ADGUARD_PASSWORD}}"
+
+    - Router:
+        icon: mdi-router-wireless
+        href: https://router.{{HOMEPAGE_VAR_DOMAIN}}
+        description: Gateway

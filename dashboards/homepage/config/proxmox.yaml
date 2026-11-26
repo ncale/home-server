@@ -1,0 +1,4 @@
+pve-01:
+  url: https://proxmox.{{HOMEPAGE_VAR_DOMAIN}}
+  token: "{{HOMEPAGE_VAR_PROXMOX_TOKEN}}"
+  secret: "{{HOMEPAGE_VAR_PROXMOX_SECRET}}"

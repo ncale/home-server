@@ -1,13 +1,24 @@
 title: Home
 theme: dark
-color: slate
-headerStyle: clean
-hideVersion: true
+color: zinc
+headerStyle: boxed
 useEqualHeights: true
+showStats: true
+statusStyle: "dot"
 
 layout:
   Applications:
-    tab: Home
+    tab: Applications
+    header: false
+    disableCollapse: true
+    style: row
     columns: 2
-  Infrastructure:
-    tab: Home
+
+  Proxmox:
+    tab: System
+  Network:
+    tab: System
+  Containers & Other:
+    tab: System
+  Quick Links:
+    tab: System

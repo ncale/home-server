@@ -1,6 +1,6 @@
 - greeting:
-    text_size: xl
-    text: Welcome
+    text_size: lg
+    text: "{{HOMEPAGE_VAR_DOMAIN}}"
 
 - datetime:
     text_size: lg
@@ -8,8 +8,3 @@
       dateStyle: medium
       timeStyle: short
       hour12: true
-
-- resources:
-    cpu: true
-    memory: true
-    disk: /
