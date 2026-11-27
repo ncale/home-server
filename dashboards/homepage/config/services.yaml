@@ -23,6 +23,12 @@
         description: News feeds
         siteMonitor: http://192.168.1.24:9001
 
+    - Immich:
+        icon: immich
+        href: https://immich.{{HOMEPAGE_VAR_DOMAIN}}
+        description: Photos and videos
+        siteMonitor: http://192.168.1.24:2283
+
     - Paperless:
         icon: paperless-ngx
         href: https://paperless.{{HOMEPAGE_VAR_DOMAIN}}
