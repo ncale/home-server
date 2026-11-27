@@ -48,11 +48,11 @@
         siteMonitor: http://192.168.1.24:5000
 
 - Data and Downloads:
-    -Forgejo:
-      icon: forgejo
-      href: https://forgejo.{{HOMEPAGE_VAR_DOMAIN}}
-      description: Local source control
-      siteMonitor: http://192.168.1.24:3000
+    - Forgejo:
+        icon: forgejo
+        href: https://forgejo.{{HOMEPAGE_VAR_DOMAIN}}
+        description: Local source control
+        siteMonitor: http://192.168.1.24:3000
 
 - Proxmox:
     - pve-01:
