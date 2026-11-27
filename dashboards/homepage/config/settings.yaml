@@ -14,7 +14,7 @@ layout:
     style: row
     columns: 3
 
-  Data & Downloads:
+  Data and Downloads:
     tab: Data & Downloads
     header: false
     disableCollapse: true

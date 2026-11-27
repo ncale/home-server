@@ -47,7 +47,7 @@
         description: Family tree
         siteMonitor: http://192.168.1.24:5000
 
-- Data & Downloads:
+- Data and Downloads:
     -Forgejo:
       icon: forgejo
       href: https://forgejo.{{HOMEPAGE_VAR_DOMAIN}}
