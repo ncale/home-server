@@ -25,6 +25,8 @@ services:
   dozzle:
     image: amir20/dozzle:latest
     container_name: dozzle
+    environment:
+      - DOZZLE_REMOTE_AGENT=192.168.1.24:7007
     ports:
       - 8080:8080
     volumes:
