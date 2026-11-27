@@ -27,12 +27,15 @@ layout:
     columns: 2
   Network:
     tab: System
+    style: row
     columns: 1
   Containers:
     tab: System
+    style: row
     columns: 1
   Other:
     tab: System
+    style: row
     columns: 1
   Quick Links:
     tab: System
