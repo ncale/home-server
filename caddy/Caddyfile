@@ -90,6 +90,10 @@
         handle @forgejo {
                 reverse_proxy 192.168.1.24:3000
         }
+        @immich host immich.{$DOMAIN}
+        handle @immich {
+                reverse_proxy 192.168.1.24:2283
+        }
 
         handle {
                 respond "Unknown service" 404
