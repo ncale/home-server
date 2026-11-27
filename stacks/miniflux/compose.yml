@@ -1,6 +1,7 @@
 services:
   miniflux:
     image: miniflux/miniflux:latest
+    container_name: miniflux
     ports:
       - "9001:8080"
     depends_on:
@@ -16,15 +17,12 @@ services:
       test: ["CMD", "/usr/bin/miniflux", "-healthcheck", "auto"]
   db:
     image: postgres:18
+    container_name: miniflux-db
     environment:
       - POSTGRES_USER=${DB_USER}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
       - POSTGRES_DB=${DB_NAME}
     volumes:
-      # You may have to adjust the volume path depending on the version of Postgres
-      # Postgres 18 uses /var/lib/postgresql
-      # Postgres 17 and below uses /var/lib/postgresql/data
-      # See https://hub.docker.com/_/postgres#pgdata
       - miniflux-db:/var/lib/postgresql
     healthcheck:
       test: ["CMD", "pg_isready", "-U", "miniflux"]
