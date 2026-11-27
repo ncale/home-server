@@ -47,93 +47,24 @@
         description: Family tree
         siteMonitor: http://192.168.1.24:5000
 
-- Containers & Other:
-    - Portainer:
-        icon: portainer
-        href: https://portainer.{{HOMEPAGE_VAR_DOMAIN}}
-        description: Docker on .24
-        siteMonitor: https://192.168.1.24:9443
-
-    - Dozzle:
-        icon: dozzle
-        href: https://dozzle.{{HOMEPAGE_VAR_DOMAIN}}
-        description: Container logs
-
-    - Home Assistant:
-        icon: home-assistant
-        href: https://homeassistant.{{HOMEPAGE_VAR_DOMAIN}}
-        description: Smart home
-        siteMonitor: http://192.168.1.22:8123
-
-    - Uptime Kuma:
-        icon: uptime-kuma
-        href: https://kuma.{{HOMEPAGE_VAR_DOMAIN}}
-        description: Up/down checks
-        widget:
-          type: uptimekuma
-          url: http://192.168.1.17:3001
-          slug: applications
-
-    - Glances:
-        icon: glances
-        href: https://glances.{{HOMEPAGE_VAR_DOMAIN}}
-        description: System stats
+- Data & Downloads:
+    -Forgejo:
+      icon: forgejo
+      href: https://forgejo.{{HOMEPAGE_VAR_DOMAIN}}
+      description: Local source control
+      siteMonitor: http://192.168.1.24:3000
 
 - Proxmox:
-    - Node:
-        - pve-01:
-            icon: proxmox
-            href: https://proxmox.{{HOMEPAGE_VAR_DOMAIN}}
-            description: Hypervisor
-            widget:
-              type: proxmox
-              url: https://192.168.1.150:8006
-              node: pve-01
-              username: "{{HOMEPAGE_VAR_PROXMOX_TOKEN}}"
-              password: "{{HOMEPAGE_VAR_PROXMOX_SECRET}}"
-
-    - Children:
-        - caddy LXC:
-            href: https://proxmox.{{HOMEPAGE_VAR_DOMAIN}}
-            description: Reverse proxy
-            proxmoxNode: pve-01
-            proxmoxType: lxc
-            proxmoxVMID: 106
-        - fileshare LXC:
-            href: https://proxmox.{{HOMEPAGE_VAR_DOMAIN}}
-            description: Exposes mounted folders for file management
-            proxmoxNode: pve-01
-            proxmoxType: lxc
-            proxmoxVMID: 107
-        - docker LXC:
-            href: https://proxmox.{{HOMEPAGE_VAR_DOMAIN}}
-            description: Hosts applications
-            proxmoxNode: pve-01
-            proxmoxType: lxc
-            proxmoxVMID: 103
-        - adguard LXC:
-            href: https://proxmox.{{HOMEPAGE_VAR_DOMAIN}}
-            description: Primary DNS server
-            proxmoxNode: pve-01
-            proxmoxType: lxc
-            proxmoxVMID: 104
-        - jellyfin LXC:
-            href: https://proxmox.{{HOMEPAGE_VAR_DOMAIN}}
-            description: Media server with iGPU passthrough
-            proxmoxNode: pve-01
-            proxmoxType: lxc
-            proxmoxVMID: 100
-        - dashboards LXC:
-            href: https://proxmox.{{HOMEPAGE_VAR_DOMAIN}}
-            description: Hosts dashboards and observability services
-            proxmoxNode: pve-01
-            proxmoxType: lxc
-            proxmoxVMID: 108
-        - Home Assistant VM:
-            href: https://proxmox.{{HOMEPAGE_VAR_DOMAIN}}
-            description: Home automation
-            proxmoxNode: pve-01
-            proxmoxVMID: 102
+    - pve-01:
+        icon: proxmox
+        href: https://proxmox.{{HOMEPAGE_VAR_DOMAIN}}
+        description: Hypervisor
+        widget:
+          type: proxmox
+          url: https://192.168.1.150:8006
+          node: pve-01
+          username: "{{HOMEPAGE_VAR_PROXMOX_TOKEN}}"
+          password: "{{HOMEPAGE_VAR_PROXMOX_SECRET}}"
 
 - Network:
     - AdGuard:
@@ -151,3 +82,42 @@
         icon: mdi-router-wireless
         href: https://router.{{HOMEPAGE_VAR_DOMAIN}}
         description: Gateway
+
+- Containers:
+    - Portainer:
+        icon: portainer
+        href: https://portainer.{{HOMEPAGE_VAR_DOMAIN}}
+        description: Docker on .24
+        siteMonitor: https://192.168.1.24:9443
+
+    - Dozzle:
+        icon: dozzle
+        href: https://dozzle.{{HOMEPAGE_VAR_DOMAIN}}
+        description: Container logs
+
+- Other:
+    - Home Assistant:
+        icon: home-assistant
+        href: https://homeassistant.{{HOMEPAGE_VAR_DOMAIN}}
+        description: Smart home
+        siteMonitor: http://192.168.1.22:8123
+
+    - Nginx Proxy Manager:
+        icon: nginx-proxy-manager
+        href: https://nginx.{{HOMEPAGE_VAR_DOMAIN}}
+        description: Backup proxy server
+        siteMonitor: http://192.168.1.24:81
+
+    - Uptime Kuma:
+        icon: uptime-kuma
+        href: https://kuma.{{HOMEPAGE_VAR_DOMAIN}}
+        description: Up/down checks
+        widget:
+          type: uptimekuma
+          url: http://192.168.1.17:3001
+          slug: applications
+
+    - Glances:
+        icon: glances
+        href: https://glances.{{HOMEPAGE_VAR_DOMAIN}}
+        description: System stats

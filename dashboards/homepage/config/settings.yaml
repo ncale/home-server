@@ -14,25 +14,27 @@ layout:
     style: row
     columns: 3
 
+  Data & Downloads:
+    tab: Data & Downloads
+    header: false
+    disableCollapse: true
+    style: row
+    columns: 3
+
   Proxmox:
-    tab: System
-    Node:
-      header: false
-      style: row
-      columns: 1
-    Children:
-      header: false
-      style: row
-      columns: 4
-  Network:
     tab: System
     style: row
     columns: 2
-  Containers & Other:
+  Network:
     tab: System
-    style: row
-    columns: 3
+    columns: 1
+  Containers:
+    tab: System
+    columns: 1
+  Other:
+    tab: System
+    columns: 1
   Quick Links:
     tab: System
     style: row
-    columns: 5
+    columns: 4
