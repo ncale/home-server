@@ -12,7 +12,7 @@ layout:
     header: false
     disableCollapse: true
     style: row
-    columns: 2
+    columns: 3
 
   Proxmox:
     tab: System
